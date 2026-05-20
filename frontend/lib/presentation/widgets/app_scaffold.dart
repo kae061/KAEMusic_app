@@ -28,11 +28,18 @@ class AppScaffold extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           if (player.hasCurrentTrack) const MiniPlayer(),
-          NavigationBar(
-            selectedIndex: currentIndex,
-            backgroundColor: const Color(0xFF12121A),
-            indicatorColor: const Color(0xFF7C4DFF).withValues(alpha: 0.2),
-            labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+          Theme(
+            data: Theme.of(context).copyWith(
+              iconTheme: const IconThemeData(color: Colors.white),
+              textTheme: Theme.of(context).textTheme.copyWith(
+                bodySmall: const TextStyle(color: Colors.white),
+              ),
+            ),
+            child: NavigationBar(
+              selectedIndex: currentIndex,
+              backgroundColor: const Color(0xFF1A1A1A),
+              indicatorColor: Colors.blue.withValues(alpha: 0.2),
+              labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
             onDestinationSelected: (idx) {
               switch (idx) {
                 case 0:
@@ -67,6 +74,7 @@ class AppScaffold extends StatelessWidget {
                 label: 'Profile',
               ),
             ],
+          ),
           ),
         ],
       ),

@@ -334,11 +334,19 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('My Account'),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        scrolledUnderElevation: 0,
       ),
       body: Container(
+        width: double.infinity,
+        height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: AppColors.backgroundGradient,
+            colors: [
+              AppColors.lightBlueAccent,
+              AppColors.oceanBlue,
+            ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -363,7 +371,7 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
                           height: 150,
                           child: CircleAvatar(
                             radius: 75,
-                            backgroundColor: AppColors.surfaceVariant,
+                            backgroundColor: Colors.white.withValues(alpha: 0.2),
                             child: _buildAvatar(resolvedAvatar, auth),
                           ),
                         ),
@@ -371,7 +379,7 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
                         Text(
                           displayName,
                           style: const TextStyle(
-                            color: AppColors.textPrimary,
+                            color: Colors.white,
                             fontSize: 28,
                             fontWeight: FontWeight.bold,
                           ),
@@ -387,14 +395,14 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
                       children: [
                         IconButton(
                           icon: const Icon(Icons.settings, size: 28),
-                          color: AppColors.textSecondary,
+                          color: Colors.white,
                           onPressed: () => _showProfileDialog(context, auth),
                         ),
                         const SizedBox(width: 16),
                         const Text(
                           'Profile Data',
                           style: TextStyle(
-                            color: AppColors.textSecondary,
+                            color: Colors.white,
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                           ),
@@ -408,19 +416,19 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
                       return Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 24),
                         child: Card(
-                          color: AppColors.surfaceVariant,
+                          color: Colors.white.withValues(alpha: 0.2),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: ListTile(
                             leading: Icon(
                               themeProvider.isDarkMode ? Icons.dark_mode : Icons.light_mode,
-                              color: AppColors.textPrimary,
+                              color: Colors.white,
                             ),
                             title: Text(
                               themeProvider.isDarkMode ? 'Dark Theme' : 'Light Theme',
                               style: const TextStyle(
-                                color: AppColors.textPrimary,
+                                color: Colors.white,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
                               ),
@@ -430,8 +438,8 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
                               onChanged: (value) {
                                 themeProvider.toggleTheme();
                               },
-                              activeTrackColor: AppColors.primary,
-                              activeThumbColor: AppColors.primaryLight,
+                              activeTrackColor: Colors.white,
+                              activeThumbColor: const Color(0xFF4682B4),
                             ),
                           ),
                         ),
@@ -446,8 +454,9 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
                       height: 50,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.primary,
+                          backgroundColor: Colors.white.withValues(alpha: 0.3),
                           foregroundColor: Colors.white,
+                          elevation: 0,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25),
                           ),

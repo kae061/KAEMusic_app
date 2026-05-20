@@ -2,58 +2,55 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 abstract class AppColors {
-  // Dark theme colors
-  static const Color darkBackground = Color(0xFF0D0D0D);
-  static const Color darkSurface = Color(0xFF141414);
-  static const Color darkSurfaceVariant = Color(0xFF1A1A1A);
-  static const Color darkCard = Color(0xFF161616);
+  static const Color darkBackground = Color(0xFF11212D);
+  static const Color darkSurface = Color(0xFF9BA8AB);
+  static const Color darkSurfaceVariant = Color(0xFF4A5C6A);
+  static const Color darkCard = Color(0xFF06141B);
 
-  // Light theme colors
-  static const Color lightBackground = Color(0xFFF5F5F5);
+  static const Color lightBackground = Color(0xFFC7B7A3);
   static const Color lightSurface = Color(0xFFFFFFFF);
-  static const Color lightSurfaceVariant = Color(0xFFE8E8E8);
-  static const Color lightCard = Color(0xFFFFFFFF);
+  static const Color lightSurfaceVariant = Color(0xFFC7B7A3);
+  static const Color lightCard = Color(0xFF561C24);
 
-  // Common colors
-  static const Color primary = Color(0xFF5A0E1A);
-  static const Color primaryLight = Color(0xFF801424);
-  static const Color primaryDark = Color(0xFF38050E);
+  static const Color primary = Color(0xFF854F6C);
+  static const Color primaryLight = Color(0xFFDFB6B2);
+  static const Color primaryDark = Color(0xFF190019);
 
-  static const Color accent = Color(0xFF9E1B32);
-  static const Color accentLight = Color(0xFFC82333);
+  static const Color accent = Color(0xFFF6DBCD);
+  static const Color accentLight = Color(0xFF935073);
 
-  // Dark theme text colors
-  static const Color darkTextPrimary = Color(0xFFF5F5F5);
-  static const Color darkTextSecondary = Color(0xFF9E9E9E);
-  static const Color darkTextDisabled = Color(0xFF555555);
+  static const Color darkTextPrimary = Color(0xFFFFFFFF);
+  static const Color darkTextSecondary = Color(0xFFFFFFFF);
+  static const Color darkTextDisabled = Color(0xFFFFFFFF);
 
-  // Light theme text colors
-  static const Color lightTextPrimary = Color(0xFF1A1A1A);
-  static const Color lightTextSecondary = Color(0xFF666666);
-  static const Color lightTextDisabled = Color(0xFFAAAAAA);
+  static const Color lightTextPrimary = Color(0xFF000000);
+  static const Color lightTextSecondary = Color(0xFF000000);
+  static const Color lightTextDisabled = Color(0xFF000000);
 
-  static const Color error = Color(0xFFFF5252);
-  static const Color success = Color(0xFF00E676);
-  static const Color warning = Color(0xFFFFD740);
+  static const Color error = Color(0xFFD96B6B);
+  static const Color success = Color(0xFF7FA986);
+  static const Color warning = Color(0xFFE5B869);
+
+  static const Color lightBlueAccent = Color(0xFFADD8E6);
+  static const Color oceanBlue = Color(0xFF1E90FF);
 
   static const List<Color> primaryGradient = [
-    Color(0xFF5A0E1A),
-    Color(0xFF38050E),
+    Color(0xFFFF6766),
+    Color(0xFFCA285),
   ];
   static const List<Color> darkBackgroundGradient = [
-    Color(0xFF141414),
-    Color(0xFF0D0D0D),
+    Color(0xFF11212D),
+    Color(0xFF4A5C6A),
   ];
   static const List<Color> darkCardGradient = [
-    Color(0xFF1C1C1C),
-    Color(0xFF141414),
+    Color(0xFF4A5C6A),
+    Color(0xFF06141B),
   ];
   static const List<Color> accentGradient = [
-    Color(0xFF801424),
-    Color(0xFF5A0E1A),
+    Color(0xFF9BA8AB),
+    Color(0xFF4A5C6A),
   ];
 
-  // Backwards compatibility - defaults to dark theme colors (const)
   static const Color background = darkBackground;
   static const Color surface = darkSurface;
   static const Color surfaceVariant = darkSurfaceVariant;
@@ -230,8 +227,8 @@ class AppTheme {
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: AppColors.darkSurface,
-        selectedItemColor: AppColors.primaryLight,
-        unselectedItemColor: AppColors.darkTextSecondary,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white,
         type: BottomNavigationBarType.fixed,
         elevation: 0,
       ),
@@ -419,8 +416,8 @@ class AppTheme {
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: AppColors.lightSurface,
-        selectedItemColor: AppColors.primaryLight,
-        unselectedItemColor: AppColors.lightTextSecondary,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white,
         type: BottomNavigationBarType.fixed,
         elevation: 0,
       ),
