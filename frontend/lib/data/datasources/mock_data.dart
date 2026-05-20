@@ -1,0 +1,268 @@
+import '../models/user_model.dart';
+import '../models/song_model.dart';
+import '../models/album_model.dart';
+import '../models/artist_model.dart';
+import '../models/playlist_model.dart';
+import '../models/track_model.dart';
+
+class MockData {
+  static final user = UserModel(
+    id: 'user-1',
+    username: 'antigravity',
+    email: 'antigravity@google.com',
+    displayName: 'Antigravity Developer',
+    avatarUrl: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80',
+    createdAt: DateTime.now().subtract(const Duration(days: 30)),
+  );
+
+  static final artists = [
+    const ArtistModel(
+      id: 'artist-1',
+      name: 'Lofi Dreamer',
+      bio: 'Crafting soothing bedroom beats for coding, sleeping, and deep focus. Inspired by late night Tokyo cityscapes and modular synthesis.',
+      imageUrl: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=400&auto=format&fit=crop&q=80',
+      monthlyListeners: 1450000,
+      isFollowing: true,
+    ),
+    const ArtistModel(
+      id: 'artist-2',
+      name: 'Synth Horizon',
+      bio: 'Exploring retro-futuristic soundscapes. Deep analog synthesizers, driving basslines, and heavy cyber neon aesthetics.',
+      imageUrl: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=400&auto=format&fit=crop&q=80',
+      monthlyListeners: 890000,
+      isFollowing: false,
+    ),
+    const ArtistModel(
+      id: 'artist-3',
+      name: 'Indie Moon',
+      bio: 'Dreamy acoustic guitars, lush vocal harmonies, and stories told under the starlight. Based out of Portland, OR.',
+      imageUrl: 'https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?w=400&auto=format&fit=crop&q=80',
+      monthlyListeners: 2300000,
+      isFollowing: false,
+    ),
+    const ArtistModel(
+      id: 'artist-4',
+      name: 'Ambient Flow',
+      bio: 'Generative modular synth patches, field recordings, and slow evolving drone textures. Calming, spacious design for your mind.',
+      imageUrl: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400&auto=format&fit=crop&q=80',
+      monthlyListeners: 560000,
+      isFollowing: true,
+    ),
+  ];
+
+  static final albums = [
+    AlbumModel(
+      id: 'album-1',
+      title: 'Midnight Focus',
+      artistId: 'artist-1',
+      artistName: 'Lofi Dreamer',
+      coverUrl: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=500&auto=format&fit=crop&q=80',
+      totalTracks: 3,
+      releasedAt: DateTime.now().subtract(const Duration(days: 100)),
+    ),
+    AlbumModel(
+      id: 'album-2',
+      title: 'Neon Velocity',
+      artistId: 'artist-2',
+      artistName: 'Synth Horizon',
+      coverUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&auto=format&fit=crop&q=80',
+      totalTracks: 3,
+      releasedAt: DateTime.now().subtract(const Duration(days: 50)),
+    ),
+    AlbumModel(
+      id: 'album-3',
+      title: 'Starry Nights',
+      artistId: 'artist-3',
+      artistName: 'Indie Moon',
+      coverUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=80',
+      totalTracks: 2,
+      releasedAt: DateTime.now().subtract(const Duration(days: 200)),
+    ),
+  ];
+
+  static final songs = [
+    // Lofi Dreamer - Midnight Focus
+    SongModel(
+      id: 'song-1',
+      title: 'Late Night Coffee',
+      artistId: 'artist-1',
+      artistName: 'Lofi Dreamer',
+      albumId: 'album-1',
+      albumTitle: 'Midnight Focus',
+      coverUrl: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=500&auto=format&fit=crop&q=80',
+      audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+      duration: const Duration(minutes: 6, seconds: 12),
+      playCount: 154000,
+      isLiked: true,
+      releasedAt: DateTime.now().subtract(const Duration(days: 100)),
+    ),
+    SongModel(
+      id: 'song-2',
+      title: 'Rainy Terminal',
+      artistId: 'artist-1',
+      artistName: 'Lofi Dreamer',
+      albumId: 'album-1',
+      albumTitle: 'Midnight Focus',
+      coverUrl: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=500&auto=format&fit=crop&q=80',
+      audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+      duration: const Duration(minutes: 7, seconds: 5),
+      playCount: 98000,
+      isLiked: false,
+      releasedAt: DateTime.now().subtract(const Duration(days: 100)),
+    ),
+    SongModel(
+      id: 'song-3',
+      title: 'Neon Chillout',
+      artistId: 'artist-1',
+      artistName: 'Lofi Dreamer',
+      albumId: 'album-1',
+      albumTitle: 'Midnight Focus',
+      coverUrl: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=500&auto=format&fit=crop&q=80',
+      audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
+      duration: const Duration(minutes: 5, seconds: 44),
+      playCount: 220000,
+      isLiked: true,
+      releasedAt: DateTime.now().subtract(const Duration(days: 100)),
+    ),
+
+    // Synth Horizon - Neon Velocity
+    SongModel(
+      id: 'song-4',
+      title: 'Cyber Driver',
+      artistId: 'artist-2',
+      artistName: 'Synth Horizon',
+      albumId: 'album-2',
+      albumTitle: 'Neon Velocity',
+      coverUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&auto=format&fit=crop&q=80',
+      audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
+      duration: const Duration(minutes: 5, seconds: 2),
+      playCount: 310000,
+      isLiked: false,
+      releasedAt: DateTime.now().subtract(const Duration(days: 50)),
+    ),
+    SongModel(
+      id: 'song-5',
+      title: 'Analog Sunrise',
+      artistId: 'artist-2',
+      artistName: 'Synth Horizon',
+      albumId: 'album-2',
+      albumTitle: 'Neon Velocity',
+      coverUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&auto=format&fit=crop&q=80',
+      audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
+      duration: const Duration(minutes: 6, seconds: 3),
+      playCount: 145000,
+      isLiked: true,
+      releasedAt: DateTime.now().subtract(const Duration(days: 50)),
+    ),
+    SongModel(
+      id: 'song-6',
+      title: 'Outrun the Grid',
+      artistId: 'artist-2',
+      artistName: 'Synth Horizon',
+      albumId: 'album-2',
+      albumTitle: 'Neon Velocity',
+      coverUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&auto=format&fit=crop&q=80',
+      audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3',
+      duration: const Duration(minutes: 5, seconds: 38),
+      playCount: 189000,
+      isLiked: false,
+      releasedAt: DateTime.now().subtract(const Duration(days: 50)),
+    ),
+
+    // Indie Moon - Starry Nights
+    SongModel(
+      id: 'song-7',
+      title: 'Starlight Guitar',
+      artistId: 'artist-3',
+      artistName: 'Indie Moon',
+      albumId: 'album-3',
+      albumTitle: 'Starry Nights',
+      coverUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=80',
+      audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3',
+      duration: const Duration(minutes: 4, seconds: 58),
+      playCount: 520000,
+      isLiked: true,
+      releasedAt: DateTime.now().subtract(const Duration(days: 200)),
+    ),
+    SongModel(
+      id: 'song-8',
+      title: 'Acoustic Voyage',
+      artistId: 'artist-3',
+      artistName: 'Indie Moon',
+      albumId: 'album-3',
+      albumTitle: 'Starry Nights',
+      coverUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=80',
+      audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3',
+      duration: const Duration(minutes: 5, seconds: 18),
+      playCount: 235000,
+      isLiked: false,
+      releasedAt: DateTime.now().subtract(const Duration(days: 200)),
+    ),
+  ];
+
+  static final mockTracks = [
+    Track(
+      id: 'track-1',
+      title: 'Late Night Coffee',
+      artist: 'Lofi Dreamer',
+      album: 'Midnight Focus',
+      genre: 'Lofi',
+      durationSeconds: 372,
+      streamUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+      coverArtUrl: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=500&auto=format&fit=crop&q=80',
+    ),
+    Track(
+      id: 'track-2',
+      title: 'Rainy Terminal',
+      artist: 'Lofi Dreamer',
+      album: 'Midnight Focus',
+      genre: 'Lofi',
+      durationSeconds: 425,
+      streamUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+      coverArtUrl: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=500&auto=format&fit=crop&q=80',
+    ),
+    Track(
+      id: 'track-3',
+      title: 'Neon Chillout',
+      artist: 'Lofi Dreamer',
+      album: 'Midnight Focus',
+      genre: 'Lofi',
+      durationSeconds: 344,
+      streamUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
+      coverArtUrl: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=500&auto=format&fit=crop&q=80',
+    ),
+    Track(
+      id: 'track-4',
+      title: 'Cyber Driver',
+      artist: 'Synth Horizon',
+      album: 'Neon Velocity',
+      genre: 'Synthwave',
+      durationSeconds: 302,
+      streamUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
+      coverArtUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&auto=format&fit=crop&q=80',
+    ),
+  ];
+
+  static final playlists = [
+    PlaylistModel(
+      id: 'playlist-1',
+      name: 'Late Night Coding',
+      description: 'Lofi and synth tracks to keep your brain focused and fingers moving.',
+      coverUrl: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=500&auto=format&fit=crop&q=80',
+      userId: 'user-1',
+      trackCount: 4,
+      tracks: [mockTracks[0], mockTracks[1], mockTracks[2], mockTracks[3]],
+      createdAt: DateTime.now().subtract(const Duration(days: 20)),
+    ),
+    PlaylistModel(
+      id: 'playlist-2',
+      name: 'Vibe Check',
+      description: 'The ultimate chill selection for high-altitude vibes.',
+      coverUrl: 'https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?w=500&auto=format&fit=crop&q=80',
+      userId: 'user-1',
+      trackCount: 4,
+      tracks: [mockTracks[3], mockTracks[2], mockTracks[1], mockTracks[0]],
+      createdAt: DateTime.now().subtract(const Duration(days: 15)),
+    ),
+  ];
+}
