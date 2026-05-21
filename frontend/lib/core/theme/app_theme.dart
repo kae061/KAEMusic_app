@@ -36,7 +36,7 @@ abstract class AppColors {
 
   static const List<Color> primaryGradient = [
     Color(0xFFFF6766),
-    Color(0xFFCA285),
+    Color(0xFF0CA285),
   ];
   static const List<Color> darkBackgroundGradient = [
     Color(0xFF11212D),
